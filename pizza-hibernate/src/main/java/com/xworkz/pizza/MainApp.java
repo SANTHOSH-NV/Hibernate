@@ -5,24 +5,21 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
+import com.xworkz.pizza.dao.PizzaHutDAO;
+import com.xworkz.pizza.dao.PizzaHutDAOImpl;
 import com.xworkz.pizza.dto.PizzaHutDTO;
+import com.xworkz.pizza.service.PizzaHutService;
+import com.xworkz.pizza.service.PizzaHutServiceImpl;
 
 public class MainApp {
 
 	public static void main(String[] args) {
+		PizzaHutService serviceImpl = new PizzaHutServiceImpl();
 
-		Configuration configuration = new Configuration();
-		configuration.configure("hibernate.cfg.xml");
-		SessionFactory sessionFactory = configuration.buildSessionFactory();
-		Session session = sessionFactory.openSession();
+		PizzaHutDTO dto = new PizzaHutDTO("Spicy Chicken", "KR Puram", 200, false, "Medium", "Non-Veg");
 
-		PizzaHutDTO dto = new PizzaHutDTO("Corn", "Malleshwaram", 150, true, "small", "Veg");
-
-		System.out.println("Successfully Added into  DB");
-		Transaction transaction = session.beginTransaction();
-
-		session.save(dto);
-		transaction.commit();
+		serviceImpl.validatePizzaHutDTO(dto);
+		serviceImpl.validateFetchPizzaDetails();
 
 	}
 

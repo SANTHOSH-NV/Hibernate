@@ -1,5 +1,7 @@
 package com.xworkz.pizza.dto;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,14 +14,16 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @Entity
 @Table(name = "pizza_table") 
+@ToString
 
-public class PizzaHutDTO {
+public class PizzaHutDTO implements Serializable {
 	
 	@Column(name = "PIZZA_ID")
 	@Id
