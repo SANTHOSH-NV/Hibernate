@@ -14,13 +14,25 @@ import com.xworkz.pizza.service.PizzaHutServiceImpl;
 public class MainApp {
 
 	public static void main(String[] args) {
-		PizzaHutService serviceImpl = new PizzaHutServiceImpl();
+//		PizzaHutService serviceImpl = new PizzaHutServiceImpl();
 
-		PizzaHutDTO dto = new PizzaHutDTO("Spicy Chicken", "KR Puram", 200, false, "Medium", "Non-Veg");
+//		PizzaHutDTO dto = new PizzaHutDTO("Spicy Chicken", "KR Puram", 200, false, "Medium", "Non-Veg");
 
-		serviceImpl.validatePizzaHutDTO(dto);
-		serviceImpl.validateFetchPizzaDetails();
+//		serviceImpl.validatePizzaHutDTO(dto);
+//		serviceImpl.validateFetchPizzaDetails();
 
+	
+//		serviceImpl.validateUpdatePizzaDetails();
+		
+//		serviceImpl.validateDeletePizzaDetails();
+		
+		
+		PizzaHutDAO impl = new PizzaHutDAOImpl();
+		impl.loadAllPizzaRecords();
+//		impl.fetchLocationUsingPizzaId();
+		
+//		impl.fetchNameUsingPizzaId();
+		
 	}
 
 }

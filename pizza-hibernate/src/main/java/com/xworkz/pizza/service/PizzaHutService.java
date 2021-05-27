@@ -9,4 +9,8 @@ public interface PizzaHutService {
 	
 	public void validateFetchPizzaDetails();
 	
+	public void validateUpdatePizzaDetails();
+	
+	public void validateDeletePizzaDetails();
+	
 }

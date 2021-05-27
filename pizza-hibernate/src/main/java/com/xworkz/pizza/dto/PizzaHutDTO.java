@@ -21,10 +21,16 @@ import lombok.ToString;
 @NoArgsConstructor
 @Entity
 @Table(name = "pizza_table") 
-@ToString
+
 
 public class PizzaHutDTO implements Serializable {
 	
+	@Override
+	public String toString() {
+		return "\n pizzaId=" + pizzaId + "\n  name=" + name + "\n location=" + location + "\n price=" + price
+				+ "\n isAvailable=" + isAvailable + "\n size=" + size + "\n type=" + type + "\n" + "***********************";
+	}
+
 	@Column(name = "PIZZA_ID")
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

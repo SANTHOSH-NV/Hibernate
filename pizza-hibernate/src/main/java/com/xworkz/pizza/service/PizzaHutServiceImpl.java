@@ -52,4 +52,18 @@ public class PizzaHutServiceImpl implements PizzaHutService {
 		
 	}
 
+	@Override
+	public void validateUpdatePizzaDetails() {
+		
+		impl.updatePizzaDetails();
+		System.out.println("Updated Details");
+	}
+
+	@Override
+	public void validateDeletePizzaDetails() {
+		
+		impl.deletePizzaDetails();
+		System.out.println("Deleted  Details");
+	}
+
 }
